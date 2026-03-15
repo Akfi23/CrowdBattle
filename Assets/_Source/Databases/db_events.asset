@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 696e9db02dbb4c209f561f7659934e25, type: 3}
+  m_Name: db_events
+  m_EditorClassIdentifier: 
+  eventsGroupContainers:
+  - _name: Game
+    _id: 50013322
+    eventContianers:
+    - _name: Start
+      _id: 28576855
+    - _name: Start Battle
+      _id: 1630309321
+    - _name: End Battle
+      _id: 705426450
+    - _name: Spawn Units
+      _id: 1348675845
+    - _name: Remix Units
+      _id: 1492722622

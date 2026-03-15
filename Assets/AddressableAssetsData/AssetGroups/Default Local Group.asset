@@ -1,0 +1,50 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Default Local Group
+  m_EditorClassIdentifier: 
+  m_GroupName: Default Local Group
+  m_GUID: b742f5e7d9f5d4dca8f60219cbe5c67d
+  m_SerializeEntries:
+  - m_GUID: 17c1289edb64c4b4ab835cef5adcb38a
+    m_Address: p_unit_player.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - units
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 2c17ec7b80f4d4d39b2ecf4cf401c658
+    m_Address: p_unit_enemy.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - units
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ab3ab48f946d4422e85d47d8dfd6f6fd
+    m_Address: p_shape_sphere.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ac19cf5f75068407ea4029fa38a778ce
+    m_Address: p_shape_cube.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ad3544bba156a4a9db5f44056f43adbc
+    m_Address: Assets/_Source/Scenes/core/scene_context.unity
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: cfa3d4cb4eaf142729b77989b8ab873f, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: f2f114ced7f394d9c9c11ad9d0d60eed, type: 2}
+    - {fileID: 11400000, guid: 5770e1cbc239e4a8086c1bd2fffc4a9e, type: 2}

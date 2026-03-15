@@ -1,0 +1,52 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee1cebabab8541e4999a5c8dc41d01e2, type: 3}
+  m_Name: db_shape
+  m_EditorClassIdentifier: 
+  shapeParameterDatas:
+  - tag:
+      name: Shape Type/Cube
+      id: 2026048014
+    shapePrefab:
+      name: Shapes/Cube
+      id: 585473959
+    valueParameters:
+    - rid: 7194212680371536007
+    - rid: 7194212680371536008
+  - tag:
+      name: Shape Type/Sphere
+      id: 1705641085
+    shapePrefab:
+      name: Shapes/Sphere
+      id: 1620765534
+    valueParameters:
+    - rid: 7194212680371536009
+    - rid: 7194212680371536010
+  references:
+    version: 2
+    RefIds:
+    - rid: 7194212680371536007
+      type: {class: HealthValueParameter, ns: _Source.Code.Objects.ValueParameters, asm: Assembly-CSharp}
+      data:
+        healthValue: 100
+    - rid: 7194212680371536008
+      type: {class: DamageValueParameter, ns: _Source.Code.Objects.ValueParameters, asm: Assembly-CSharp}
+      data:
+        damageValue: 10
+    - rid: 7194212680371536009
+      type: {class: HealthValueParameter, ns: _Source.Code.Objects.ValueParameters, asm: Assembly-CSharp}
+      data:
+        healthValue: 50
+    - rid: 7194212680371536010
+      type: {class: DamageValueParameter, ns: _Source.Code.Objects.ValueParameters, asm: Assembly-CSharp}
+      data:
+        damageValue: 20

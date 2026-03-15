@@ -1,0 +1,70 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d326420c2f674380b52dd5d836e1c02a, type: 3}
+  m_Name: db_tags
+  m_EditorClassIdentifier: 
+  _groups:
+  - _name: Player
+    _id: 1714388549
+    _tags:
+    - _name: Player
+      _id: 49025948
+  - _name: Items
+    _id: 1814785612
+    _tags:
+    - _name: Money
+      _id: 939709410
+  - _name: Parameters
+    _id: 1156350044
+    _tags:
+    - _name: Health
+      _id: 258296925
+    - _name: MoveSpeed
+      _id: 439346331
+    - _name: AttackSpeed
+      _id: 627333326
+    - _name: Damage
+      _id: 848891666
+    - _name: Size
+      _id: 2040760859
+    - _name: Color
+      _id: 839074239
+    - _name: Shape
+      _id: 1846805669
+  - _name: Shape Type
+    _id: 2086456168
+    _tags:
+    - _name: Cube
+      _id: 2026048014
+    - _name: Sphere
+      _id: 1705641085
+  - _name: Color Type
+    _id: 11730208
+    _tags:
+    - _name: Red
+      _id: 1794652100
+    - _name: Blue
+      _id: 744402487
+    - _name: Green
+      _id: 61533936
+  - _name: Size Type
+    _id: 1130074111
+    _tags:
+    - _name: Small
+      _id: 1568927506
+    - _name: Big
+      _id: 436752050
+  - _name: Enemy
+    _id: 1610900186
+    _tags:
+    - _name: Enemy
+      _id: 2033883733

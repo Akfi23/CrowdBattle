@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e600d44915949c3a22ca13c1fa75889, type: 3}
+  m_Name: db_units
+  m_EditorClassIdentifier: 
+  unitsInitialValueParameters:
+  - rid: 7194212680371535992
+  - rid: 7194212680371535993
+  - rid: 7194212680371535994
+  - rid: 7194212680371535995
+  references:
+    version: 2
+    RefIds:
+    - rid: 7194212680371535992
+      type: {class: HealthValueParameter, ns: _Source.Code.Objects.ValueParameters, asm: Assembly-CSharp}
+      data:
+        healthValue: 100
+    - rid: 7194212680371535993
+      type: {class: DamageValueParameter, ns: _Source.Code.Objects.ValueParameters, asm: Assembly-CSharp}
+      data:
+        damageValue: 10
+    - rid: 7194212680371535994
+      type: {class: AttackSpeedValueParameter, ns: _Source.Code.Objects.ValueParameters, asm: Assembly-CSharp}
+      data:
+        attackSpeedValue: 1
+    - rid: 7194212680371535995
+      type: {class: MoveSpeedValueParameter, ns: _Source.Code.Objects.ValueParameters, asm: Assembly-CSharp}
+      data:
+        moveSpeedValue: 10
