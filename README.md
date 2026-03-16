@@ -45,10 +45,18 @@ Entry Point проекта => ContextRoot.cs
 Если у вас не проходит компиляция и проект ругается , что не находит нужных дерикторий, просто впишите эти дефайны. 
 
 ODIN_INSPECTOR
+
 ODIN_INSPECTOR_3
+
 ODIN_INSPECTOR_3_1
+
 NODECANVAS
+
 ECS_EXIST
+
 ODIN_INSPECTOR_3_2
+
 ODIN_INSPECTOR_3_3
+
 NODE_CANVAS
+
