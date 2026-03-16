@@ -77,6 +77,7 @@ namespace _Source.Code._AKFramework.Installers
             }
             
             _fixedUpdateSystems
+                .Add(new AutoDestroySystem())
                 .Add(new DestroySystem())
                 .Init();
         
@@ -101,7 +102,8 @@ namespace _Source.Code._AKFramework.Installers
                     new FollowAttackTargetSystem(),
                     new AttackTargetSystem(),
                     new DamageSystem(),
-                    new UpdateBattleDataOnUnitDieSystem()
+                    new UpdateBattleDataOnUnitDieSystem(),
+                    new VFXOnDieSystem()
                     )
                 
                 .Add(new ClearBattleFieldSystem())

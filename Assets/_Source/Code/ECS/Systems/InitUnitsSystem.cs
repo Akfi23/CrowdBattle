@@ -91,7 +91,7 @@ namespace _Source.Code.ECS.Systems
                         if (_attackSpeedPool.Has(entity))
                         {
                             ref var attackSpeed = ref _attackSpeedPool.Get(entity);
-                            attackSpeed.value = value.GetValueParameterValue();
+                            attackSpeed.value = (value.GetValueParameterValue() / AKConstants.ATTACK_SPEED_DEVIDER);
                         }
 
                         continue;

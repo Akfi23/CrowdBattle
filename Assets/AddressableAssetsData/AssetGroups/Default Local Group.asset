@@ -27,6 +27,11 @@ MonoBehaviour:
     m_SerializedLabels:
     - units
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9d11447644b0e0842a7edb034fe1ac72
+    m_Address: fx_splash_dust.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: ab3ab48f946d4422e85d47d8dfd6f6fd
     m_Address: p_shape_sphere.prefab
     m_ReadOnly: 0

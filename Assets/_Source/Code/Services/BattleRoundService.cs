@@ -29,5 +29,10 @@ namespace _Source.Code.Services
 
         public int GetPlayersUnitCount() => _playersUnitCount;
         public int GetEnemyUnitCount() => _enemyUnitCount;
+
+        public void ChangeTimeScale()
+        {
+            Time.timeScale = Time.timeScale == 1 ? 2 : 1;
+        }
     }
 }

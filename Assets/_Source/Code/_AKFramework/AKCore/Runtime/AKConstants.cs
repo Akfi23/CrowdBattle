@@ -8,6 +8,6 @@ namespace _Source.Code._AKFramework.AKCore.Runtime
         public static readonly Guid EmptyGUID = Guid.Empty;
         public const string NONE = "None";
         public const float MOVE_SPEED_MULTIPLIER = 2;
-        public const float ATTACK_SPEED_DEVIDER = 60;
+        public const float ATTACK_SPEED_DEVIDER = 2;
     }
 }

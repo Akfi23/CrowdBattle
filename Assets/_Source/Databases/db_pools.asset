@@ -31,3 +31,9 @@ MonoBehaviour:
     - _name: Sphere
       _id: 1620765534
       _prefabData: {fileID: 11400000, guid: 4192cbb1916354b0db445ce250bf291e, type: 2}
+  - _name: VFX
+    _id: 511485839
+    _prefabContainers:
+    - _name: Death_splash
+      _id: 183499012
+      _prefabData: {fileID: 11400000, guid: 51a06293d5a082e4fa293effea3657bf, type: 2}
