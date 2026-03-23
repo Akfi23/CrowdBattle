@@ -1,64 +1,83 @@
-Архитектура проекта:
 
-Unity - 6000.0.60f1.
-Проект построен на архитектуре Entity Component System (ECS) с использованием LeoEcsLite.
-Более подробно с реализацией архитектуры, модулей и инструментами можно ознакомиться по ссылке: https://github.com/Akfi23/AkfiFramework
+# 🎮 About the Project
 
-Причины выбора ECS:
-1) высокая производительность при большом количестве объектов
-2) разделение данных и логики
-3) минимизация аллокаций
-4) удобная масштабируемость
-5) упрощение добавления новых игровых механик
-6) Отлично ложится на текущие механики поведения юнитов на поле боя
+This project is a simple **crowd battle game**.
 
-Каждый юнит представлен Entity, содержащей набор компонентов с данными.
-Игровая логика реализована через Systems.
+Two groups of units fight each other:
 
-Entry Point проекта => ContextRoot.cs
+* basic combat system
+* simple target selection logic
 
-Там происходит инициализация систем и биндингов сервисов для DI контейнера. 
-Часть логики игрового цикла и UI вынесена на FSM NodeCanvas. Почему такое решение? Оно достаточно удобно для внесения быстрых изменений , как со стороны разработчиков, так и гейм-дизайнеров. Позволяет быстро и наглядно контроллировать и настраивать игровой цикл. Приемущественно используется для UI. 
-Посмотреть нодовую реализацию можно в компоненте FSMOwner. Сцена - scene_context. Объект - p_context_root. 
+Units are represented as:
 
-Работа с данными и конфигами происходит через сервисы (Assets/_Source/Code/Services)
-Конфиги (Assets/_Source/Databases/)
+* different geometric shapes
+* various colors
+* different sizes
+---
 
-Спавн объектов реализован через AKPoolService + Addressables. 
+# 🧠 Project Architecture
 
-Дополнительная функция:
+This project is built using the **Entity Component System (ECS)** architecture with **LeoEcsLite**.
 
-1) Перед началом боя, игра/сервер отдает и показывает один или несколько бонусных комбинаций юнитов. Предположим Big,Red,Sphere. Каждая бонусная комбинация дает свой уникальный бафф.
-2) Происходит спаун юнитов игрока( или фича распростроняется на всех юнитов).
-3) Если после спауна есть совпадение с бонусной комбинацией, то мы баффаем этих юнитов.
-4) Дать возможность игроку респавнить юнитов , чтобы попасть в мэтч бонусной комбинации. Сделать эту возможность плантой. 1-Попытка бесплатно. 2- за soft валюту. 3- за hard-валюту или любую другую систему. 
+You can find more details about the architecture, modules, and tools here:
+👉 [https://github.com/Akfi23/AkfiFramework](https://github.com/Akfi23/AkfiFramework)
 
+---
 
-Время выполнения: 8-9 часов.
+## 🧩 Core Concept
 
+Each unit is represented as an **Entity** that contains a set of components with data.
+Game logic is implemented through **Systems**.
 
+---
 
+## 🎯 Entry Point
 
+**Entry Point:** `ContextRoot.cs`
 
+This is where:
 
-[Возможные проблемы]
+* systems are initialized
+* services are bound to the DI container
 
-При использовании фреймворка получал отзывы, что могут слетать дефайны в настройках проекта при смене целевой платформы проекта. 
-Если у вас не проходит компиляция и проект ругается , что не находит нужных дерикторий, просто впишите эти дефайны. 
+---
 
-ODIN_INSPECTOR
+## 🔄 Game Flow & UI
 
-ODIN_INSPECTOR_3
+Part of the game loop and UI logic is implemented using FSM via **NodeCanvas**.
 
-ODIN_INSPECTOR_3_1
+### Why this approach?
 
-NODECANVAS
+* Allows fast iteration
+* Convenient for both developers and game designers
+* Provides a clear and visual way to control and tweak the game flow
 
-ECS_EXIST
+It is mainly used for UI logic.
 
-ODIN_INSPECTOR_3_2
+You can find the node-based implementation in:
 
-ODIN_INSPECTOR_3_3
+* Component: `FSMOwner`
+* Scene: `scene_context`
+* Object: `p_context_root`
 
-NODE_CANVAS
+---
 
+## 📦 Data & Configs
+
+* Services: `Assets/_Source/Code/Services`
+* Configs: `Assets/_Source/Databases/`
+
+---
+
+## 🧱 Spawning System
+
+Object spawning is implemented using:
+
+* `AKPoolService`
+* Addressables
+
+---
+
+## 📌 Purpose
+
+This project serves as a **minimal example** demonstrating how to use my LeoEcsLite Tools framework in a real scenario.
