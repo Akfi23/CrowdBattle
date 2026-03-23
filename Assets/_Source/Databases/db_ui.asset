@@ -30,3 +30,10 @@ MonoBehaviour:
         _id: 58726861
         buttonData: {fileID: 0}
       toggleContainers: []
+    - _name: Result Screen
+      _id: 748445078
+      buttonContainers:
+      - _name: Continue
+        _id: 1951091646
+        buttonData: {fileID: 0}
+      toggleContainers: []

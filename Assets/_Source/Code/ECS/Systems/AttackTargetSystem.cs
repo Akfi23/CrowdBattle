@@ -51,8 +51,11 @@ namespace _Source.Code.ECS.Systems
                 ref var targetTransform = ref _transformPool.Get(targetEntity).instance;
                 ref var attackDistance = ref _attackDistancePool.Get(entity).value;
 
-                if (transform.position.DistanceXZ(targetTransform.position) >= attackDistance) continue;
-
+                if (transform.position.DistanceXZ(targetTransform.position) >= attackDistance)
+                {
+                    continue;
+                }
+                
                 ref var damage = ref _damagePool.Get(entity).value;
 
                 _damageRequestPool.Add(_world.NewEntity()) = new DamageRequest()

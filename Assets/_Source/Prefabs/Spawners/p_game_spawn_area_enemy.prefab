@@ -15,7 +15,7 @@ GameObject:
   m_Layer: 0
   m_Name: p_game_spawn_area_enemy
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -61,6 +61,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _value:
     size: {x: 10, y: 0, z: 25}
+    prefabToSpawn:
+      name: Units/Enemy Unit
+      id: 699066722
   gizmoColor: {r: 1, g: 0.103087865, b: 0, a: 1}
   lineThickness: 10
 --- !u!114 &4778274904170529155

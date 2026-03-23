@@ -15,7 +15,7 @@ GameObject:
   m_Layer: 0
   m_Name: p_game_spawn_area_player
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 3936346786652291628, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -61,6 +61,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _value:
     size: {x: 10, y: 0, z: 25}
+    prefabToSpawn:
+      name: Units/Player Unit
+      id: 302948199
   gizmoColor: {r: 0, g: 1, b: 0, a: 1}
   lineThickness: 10
 --- !u!114 &956278297122069663

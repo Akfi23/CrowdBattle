@@ -12,6 +12,7 @@ namespace _Source.Code.Services
 
         private int _playersUnitCount;
         private int _enemyUnitCount;
+        private bool _isPlayerWin;
 
         public int GetUnitsSpawnCount() => _database.UnitsCount;
 
@@ -33,6 +34,16 @@ namespace _Source.Code.Services
         public void ChangeTimeScale()
         {
             Time.timeScale = Time.timeScale == 1 ? 2 : 1;
+        }
+
+        public bool GetIsPlayerWin()
+        {
+            return _isPlayerWin;
+        }
+
+        public void SetIsPlayerWin(bool status)
+        {
+            _isPlayerWin = status;
         }
     }
 }

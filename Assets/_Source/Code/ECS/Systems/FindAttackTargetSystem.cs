@@ -16,7 +16,7 @@ namespace _Source.Code.ECS.Systems
         private EcsPool<Die> _diePool;
         private EcsPool<AttackTarget> _attackTargetPool;
         private EcsPool<TransformRef> _transformPool;
-        
+
         private EcsPackedEntity _target;
         private float _minDistance = Mathf.Infinity;
         private float _distance = 0f;
@@ -35,6 +35,8 @@ namespace _Source.Code.ECS.Systems
 
         public override void Tick(ref IEcsSystems systems)
         {
+            if (Time.frameCount % 2 != 0) return;
+            
             foreach (var entity in _playerUnitsFilter)
             {
                 if (!_attackTargetPool.Has(entity))
@@ -54,7 +56,7 @@ namespace _Source.Code.ECS.Systems
                     _attackTargetPool.Del(entity);
                 }
             }
-            
+
             foreach (var entity in _enemyUnitsFilter)
             {
                 if (!_attackTargetPool.Has(entity))

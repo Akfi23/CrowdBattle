@@ -47,15 +47,19 @@ namespace _Source.Code.ECS.Systems
 
                 _battleRoundService.SetEnemyUnitCount(_enemyFilter.GetEntitiesCount());
                 _battleRoundService.SetPlayersUnitCount(_playerFilter.GetEntitiesCount());
+
+
                 
                 if (_enemyFilter.GetEntitiesCount() < 1)
                 {
+                    _battleRoundService.SetIsPlayerWin(true);
                     _eventsService.Broadcast(AKEvents.Game__End_Battle);
                     break;
                 }
                 
                 if (_playerFilter.GetEntitiesCount() < 1)
                 {
+                    _battleRoundService.SetIsPlayerWin(false);
                     _eventsService.Broadcast(AKEvents.Game__End_Battle);
                     break;
                 }

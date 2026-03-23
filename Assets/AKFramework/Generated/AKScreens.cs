@@ -6,5 +6,6 @@ namespace AKFramework.Generated
     {
         public static readonly AKScreen Game__Game_Screen = new (89, "Game/Game Screen");
         public static readonly AKScreen Game__Menu_Screen = new (126897161, "Game/Menu Screen");
+        public static readonly AKScreen Game__Result_Screen = new (748445078, "Game/Result Screen");
     }
 }
