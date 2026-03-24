@@ -35,4 +35,4 @@ MonoBehaviour:
     - rid: 7194212680371535995
       type: {class: MoveSpeedValueParameter, ns: _Source.Code.Objects.ValueParameters, asm: Assembly-CSharp}
       data:
-        moveSpeedValue: 10
+        moveSpeedValue: 3

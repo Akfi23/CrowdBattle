@@ -25,12 +25,15 @@ MonoBehaviour:
   - _name: Shapes
     _id: 1200740022
     _prefabContainers:
-    - _name: Cube
+    - _name: Character 1
       _id: 585473959
       _prefabData: {fileID: 11400000, guid: 1e669bdab4bcd4d2a838da34efd34d44, type: 2}
-    - _name: Sphere
+    - _name: Character 2
       _id: 1620765534
       _prefabData: {fileID: 11400000, guid: 4192cbb1916354b0db445ce250bf291e, type: 2}
+    - _name: Character 3
+      _id: 902201364
+      _prefabData: {fileID: 11400000, guid: 5da02807b3b96cd4da04ce50a4d995d1, type: 2}
   - _name: VFX
     _id: 511485839
     _prefabContainers:

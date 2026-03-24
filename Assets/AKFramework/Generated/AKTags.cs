@@ -13,8 +13,9 @@ namespace AKFramework.Generated
         public static readonly AKTag Parameters__Size = new (2040760859, "Parameters/Size");
         public static readonly AKTag Parameters__Color = new (839074239, "Parameters/Color");
         public static readonly AKTag Parameters__Shape = new (1846805669, "Parameters/Shape");
-        public static readonly AKTag Shape_Type__Cube = new (2026048014, "Shape Type/Cube");
-        public static readonly AKTag Shape_Type__Sphere = new (1705641085, "Shape Type/Sphere");
+        public static readonly AKTag Shape_Type__Character_1 = new (2026048014, "Shape Type/Character 1");
+        public static readonly AKTag Shape_Type__Character_2 = new (1705641085, "Shape Type/Character 2");
+        public static readonly AKTag Shape_Type__Character_3 = new (603206830, "Shape Type/Character 3");
         public static readonly AKTag Color_Type__Red = new (1794652100, "Color Type/Red");
         public static readonly AKTag Color_Type__Blue = new (744402487, "Color Type/Blue");
         public static readonly AKTag Color_Type__Green = new (61533936, "Color Type/Green");

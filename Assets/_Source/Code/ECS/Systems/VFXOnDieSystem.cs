@@ -1,9 +1,7 @@
 ﻿using _Source.Code._AKFramework.AKCore.Runtime;
 using _Source.Code._AKFramework.AKECS.Runtime;
-using _Source.Code._AKFramework.AKEvents.Runtime;
 using _Source.Code._AKFramework.AKPools.Runtime;
 using _Source.Code.ECS.Components;
-using _Source.Code.Services;
 using AKFramework.Generated;
 using Leopotam.EcsLite;
 using UnityEngine;
@@ -16,7 +14,7 @@ namespace _Source.Code.ECS.Systems
 
         private EcsFilter _destroyFilter;
         
-        private EcsPool<DestroyRequest> _destroyPool;
+        private EcsPool<DeathRequest> _deathRequestPool;
         private EcsPool<Unit> _unitPool;
         private EcsPool<TransformRef> _transformPool;
 
@@ -26,9 +24,9 @@ namespace _Source.Code.ECS.Systems
         {
             _world = systems.GetWorld();
 
-            _destroyFilter = _world.Filter<DestroyRequest>().End();
+            _destroyFilter = _world.Filter<DeathRequest>().End();
 
-            _destroyPool = _world.GetPool<DestroyRequest>();
+            _deathRequestPool = _world.GetPool<DeathRequest>();
             _unitPool = _world.GetPool<Unit>();
             _transformPool = _world.GetPool<TransformRef>();
 
@@ -39,7 +37,7 @@ namespace _Source.Code.ECS.Systems
         {
             foreach (var entity in _destroyFilter)
             {
-                ref var destroyRequest = ref _destroyPool.Get(entity);
+                ref var destroyRequest = ref _deathRequestPool.Get(entity);
                 if (!destroyRequest.TargetPackedEntity.Unpack(_world, out var destroyedEntity)) continue;
                 if (!_unitPool.Has(destroyedEntity)) continue;
 

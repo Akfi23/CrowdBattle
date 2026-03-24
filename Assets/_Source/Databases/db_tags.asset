@@ -43,10 +43,12 @@ MonoBehaviour:
   - _name: Shape Type
     _id: 2086456168
     _tags:
-    - _name: Cube
+    - _name: Character 1
       _id: 2026048014
-    - _name: Sphere
+    - _name: Character 2
       _id: 1705641085
+    - _name: Character 3
+      _id: 603206830
   - _name: Color Type
     _id: 11730208
     _tags:

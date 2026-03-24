@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18d06e5092684f67bbc84f60f2964ffd, type: 3}
   m_Name: db_battle_round_setings
   m_EditorClassIdentifier: 
-  unitsCount: 20
+  unitsCount: 10

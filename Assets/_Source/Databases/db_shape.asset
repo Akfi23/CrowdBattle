@@ -31,9 +31,26 @@ MonoBehaviour:
     valueParameters:
     - rid: 7194212680371536009
     - rid: 7194212680371536010
+  - tag:
+      name: Shape Type/Character 3
+      id: 603206830
+    shapePrefab:
+      name: Shapes/Character 3
+      id: 902201364
+    valueParameters:
+    - rid: 6766467676154364212
+    - rid: 6766467676154364213
   references:
     version: 2
     RefIds:
+    - rid: 6766467676154364212
+      type: {class: HealthValueParameter, ns: _Source.Code.Objects.ValueParameters, asm: Assembly-CSharp}
+      data:
+        healthValue: 30
+    - rid: 6766467676154364213
+      type: {class: DamageValueParameter, ns: _Source.Code.Objects.ValueParameters, asm: Assembly-CSharp}
+      data:
+        damageValue: 30
     - rid: 7194212680371536007
       type: {class: HealthValueParameter, ns: _Source.Code.Objects.ValueParameters, asm: Assembly-CSharp}
       data:

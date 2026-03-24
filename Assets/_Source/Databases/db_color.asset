@@ -19,7 +19,6 @@ MonoBehaviour:
     material: {fileID: 2100000, guid: 438fa1fe309f64b71927c4a5d66e60d7, type: 2}
     valueParameters:
     - rid: 7194212680371536012
-    - rid: 7194212680371536013
     - rid: 7194212680371536020
   - tag:
       name: Color Type/Blue
@@ -28,14 +27,12 @@ MonoBehaviour:
     valueParameters:
     - rid: 7194212680371536014
     - rid: 7194212680371536015
-    - rid: 7194212680371536016
   - tag:
       name: Color Type/Green
       id: 61533936
     material: {fileID: 2100000, guid: 4419106b2b96448eba1f571947e5af0b, type: 2}
     valueParameters:
     - rid: 7194212680371536018
-    - rid: 7194212680371536019
     - rid: 7194212680371536021
   references:
     version: 2
@@ -44,10 +41,6 @@ MonoBehaviour:
       type: {class: DamageValueParameter, ns: _Source.Code.Objects.ValueParameters, asm: Assembly-CSharp}
       data:
         damageValue: 40
-    - rid: 7194212680371536013
-      type: {class: MoveSpeedValueParameter, ns: _Source.Code.Objects.ValueParameters, asm: Assembly-CSharp}
-      data:
-        moveSpeedValue: -9
     - rid: 7194212680371536014
       type: {class: AttackSpeedValueParameter, ns: _Source.Code.Objects.ValueParameters, asm: Assembly-CSharp}
       data:
@@ -56,18 +49,10 @@ MonoBehaviour:
       type: {class: DamageValueParameter, ns: _Source.Code.Objects.ValueParameters, asm: Assembly-CSharp}
       data:
         damageValue: -15
-    - rid: 7194212680371536016
-      type: {class: MoveSpeedValueParameter, ns: _Source.Code.Objects.ValueParameters, asm: Assembly-CSharp}
-      data:
-        moveSpeedValue: 10
     - rid: 7194212680371536018
       type: {class: DamageValueParameter, ns: _Source.Code.Objects.ValueParameters, asm: Assembly-CSharp}
       data:
         damageValue: 20
-    - rid: 7194212680371536019
-      type: {class: MoveSpeedValueParameter, ns: _Source.Code.Objects.ValueParameters, asm: Assembly-CSharp}
-      data:
-        moveSpeedValue: -5
     - rid: 7194212680371536020
       type: {class: HealthValueParameter, ns: _Source.Code.Objects.ValueParameters, asm: Assembly-CSharp}
       data:
@@ -75,4 +60,4 @@ MonoBehaviour:
     - rid: 7194212680371536021
       type: {class: HealthValueParameter, ns: _Source.Code.Objects.ValueParameters, asm: Assembly-CSharp}
       data:
-        healthValue: -100
+        healthValue: -50

@@ -17,7 +17,8 @@ namespace _Client_.Scripts.ECS.Systems
         private EcsPool<HealthRef> _healthPool;
         private EcsPool<Die> _diePool;
         private EcsPool<DestroyRequest> _destroyRequestPool;
-        
+        private EcsPool<DeathRequest> _deathRequestPool;
+
         protected override void Setup(ref IEcsSystems systems, ref IAKContainer container)
         {
             _world = systems.GetWorld();
@@ -27,6 +28,7 @@ namespace _Client_.Scripts.ECS.Systems
             _healthPool = _world.GetPool<HealthRef>();
             _diePool = _world.GetPool<Die>();
             _destroyRequestPool = _world.GetPool<DestroyRequest>();
+            _deathRequestPool = _world.GetPool<DeathRequest>();
         }
 
         public override void Tick(ref IEcsSystems systems)
@@ -53,7 +55,11 @@ namespace _Client_.Scripts.ECS.Systems
             if(health.value>0) return;
 
             _diePool.Add(entity);
-            _destroyRequestPool.Add(_world.NewEntity()).TargetPackedEntity = _world.PackEntity(entity);
+            ref var destroy = ref _destroyRequestPool.Add(_world.NewEntity());
+            destroy.TargetPackedEntity = _world.PackEntity(entity);
+            destroy.Delay = 2f;
+
+            _deathRequestPool.Add(_world.NewEntity()).TargetPackedEntity = destroy.TargetPackedEntity;
         }
     }
 }

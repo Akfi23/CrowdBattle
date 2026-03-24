@@ -22,7 +22,7 @@ MonoBehaviour:
   - tag:
       name: Size Type/Small
       id: 1568927506
-    size: {x: 0.75, y: 0.75, z: 0.75}
+    size: {x: 1, y: 1, z: 1}
     valueParameters:
     - rid: 7194212680371535980
   references:
@@ -35,4 +35,4 @@ MonoBehaviour:
     - rid: 7194212680371535980
       type: {class: HealthValueParameter, ns: _Source.Code.Objects.ValueParameters, asm: Assembly-CSharp}
       data:
-        healthValue: -50
+        healthValue: 10

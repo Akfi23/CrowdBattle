@@ -103,6 +103,7 @@ namespace _Source.Code._AKFramework.Installers
                     new AttackTargetSystem(),
                     new DamageSystem(),
                     new UpdateBattleDataOnUnitDieSystem(),
+                    new DeathAnimSystem(),
                     new VFXOnDieSystem()
                     )
                 
@@ -113,6 +114,7 @@ namespace _Source.Code._AKFramework.Installers
                 .DeleteHereAll<SetupValueParametersRequest>()
                 .DeleteHereAll<EcsGroupSystemState>()
                 .DeleteHereAll<DamageRequest>()
+                .DeleteHereAll<DeathRequest>()
                 .DeleteHereAll<DestroyRequest>()
                 .DeleteHereAll<AKEventCallback>()
                 .Init();

@@ -1,6 +1,7 @@
 using _Source.Code._AKFramework.AKCore.Runtime;
 using _Source.Code._AKFramework.AKECS.Runtime;
 using _Source.Code.ECS.Components;
+using AKFramework.Generated;
 using Leopotam.EcsLite;
 using UnityEngine;
 
@@ -16,7 +17,8 @@ namespace _Source.Code.ECS.Systems
         private EcsPool<NavMeshAgentRef> _agentPool;
         private EcsPool<MovementSpeedRef> _movementSpeedPool;
         private EcsPool<AttackDistance> _attackDistancePool;
-        
+        private EcsPool<AnimatorRef> _animatorPool;
+
         private EcsPackedEntity _target;
         private float _minDistance = Mathf.Infinity;
         private float _distance = 0f;
@@ -32,6 +34,7 @@ namespace _Source.Code.ECS.Systems
             _agentPool = _world.GetPool<NavMeshAgentRef>();
             _movementSpeedPool = _world.GetPool<MovementSpeedRef>();
             _attackDistancePool = _world.GetPool<AttackDistance>();
+            _animatorPool = _world.GetPool<AnimatorRef>();
         }
 
         public override void Tick(ref IEcsSystems systems)
@@ -45,10 +48,16 @@ namespace _Source.Code.ECS.Systems
                 ref var targetTransform = ref _transformPool.Get(targetEntity).instance;
                 ref var agent = ref _agentPool.Get(entity).instance;
                 ref var attackDistance = ref _attackDistancePool.Get(entity).value;
+                ref var animator = ref _animatorPool.Get(entity).instance;
 
                 if (transform.position.DistanceXZ(targetTransform.position) < attackDistance)
                 {
-                    agent.ResetPath();
+                    if (agent.hasPath)
+                    {
+                        agent.ResetPath();
+                        // animator.SetTrigger(AnimatorHashStrings.IsIdle);
+                    }
+                    
                     continue;
                 }
 
@@ -56,6 +65,7 @@ namespace _Source.Code.ECS.Systems
 
                 agent.speed = moveSpeed;
                 agent.SetDestination(targetTransform.position);
+                animator.SetTrigger(AnimatorHashStrings.IsRun);
             }
         }
     }

@@ -15,19 +15,21 @@ namespace _Source.Code.ECS.Systems
         private EcsWorld _world;
         private EcsFilter _unitsFilter;
         
-        private EcsPool<MeshRendererRef> _meshRendererPool;
+        private EcsPool<SkinnedMeshRendererRef> _meshRendererPool;
         private EcsPool<SetupValueParametersRequest> _setupParametersRequestPool;
-        
+        private EcsPool<GameObjectRef> _gameObjectPool;
+
         private UnitColorService _unitColorService;
         
         protected override void Setup(ref IEcsSystems systems, ref IAKContainer container)
         {
             _world = systems.GetWorld();
 
-            _unitsFilter = _world.Filter<Unit>().Inc<Spawned>().Inc<Graphic>().Inc<MeshRendererRef>().Inc<Init>().End();
+            _unitsFilter = _world.Filter<Unit>().Inc<Spawned>().Inc<Graphic>().Inc<SkinnedMeshRendererRef>().Inc<Init>().End();
 
-            _meshRendererPool = _world.GetPool<MeshRendererRef>();
+            _meshRendererPool = _world.GetPool<SkinnedMeshRendererRef>();
             _setupParametersRequestPool = _world.GetPool<SetupValueParametersRequest>();
+            _gameObjectPool = _world.GetPool<GameObjectRef>();
 
             _unitColorService = container.Resolve<UnitColorService>();
         }
@@ -57,7 +59,6 @@ namespace _Source.Code.ECS.Systems
 
                 ref var meshRenderer = ref _meshRendererPool.Get(entity).instance;
                 meshRenderer.material = data.GetMainParameterValue();
-                
             }
         }
     }

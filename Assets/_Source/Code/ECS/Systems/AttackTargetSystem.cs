@@ -1,6 +1,7 @@
 using _Source.Code._AKFramework.AKCore.Runtime;
 using _Source.Code._AKFramework.AKECS.Runtime;
 using _Source.Code.ECS.Components;
+using AKFramework.Generated;
 using Leopotam.EcsLite;
 using UnityEngine;
 
@@ -18,6 +19,8 @@ namespace _Source.Code.ECS.Systems
         private EcsPool<AttackSpeed> _attackSpeedPool;
         private EcsPool<Damage> _damagePool;
         private EcsPool<DamageRequest> _damageRequestPool;
+        private EcsPool<AnimatorRef> _animatorPool;
+        private EcsPool<ShootFXRoot> _shootFxPool;
 
         private EcsPackedEntity _target;
         private float _minDistance = Mathf.Infinity;
@@ -28,7 +31,7 @@ namespace _Source.Code.ECS.Systems
             _world = systems.GetWorld();
 
             _unitsFilter = _world.Filter<Unit>().Inc<Spawned>().Inc<AttackTarget>().Inc<AttackDistance>()
-                .Inc<MovementSpeedRef>().Inc<NavMeshAgentRef>().Inc<Init>().Exc<Die>()
+                .Inc<MovementSpeedRef>().Inc<NavMeshAgentRef>().Inc<AnimatorRef>().Inc<ShootFXRoot>().Inc<Init>().Exc<Die>()
                 .Exc<DestroyImmediateSelfRequest>().Exc<AttackDelayTimer>().End();
 
             _attackTargetPool = _world.GetPool<AttackTarget>();
@@ -38,6 +41,8 @@ namespace _Source.Code.ECS.Systems
             _attackSpeedPool = _world.GetPool<AttackSpeed>();
             _damagePool = _world.GetPool<Damage>();
             _damageRequestPool = _world.GetPool<DamageRequest>();
+            _animatorPool = _world.GetPool<AnimatorRef>();
+            _shootFxPool = _world.GetPool<ShootFXRoot>();
         }
 
         public override void Tick(ref IEcsSystems systems)
@@ -55,6 +60,8 @@ namespace _Source.Code.ECS.Systems
                 {
                     continue;
                 }
+
+                ref var animator = ref _animatorPool.Get(entity).instance;
                 
                 ref var damage = ref _damagePool.Get(entity).value;
 
@@ -64,6 +71,13 @@ namespace _Source.Code.ECS.Systems
                     OwnerPackedEntity = _world.PackEntity(entity),
                     TargetPackedEntity = attackTarget
                 };
+                
+                animator.ResetTrigger(AnimatorHashStrings.IsRun);
+                animator.SetTrigger(AnimatorHashStrings.IsAttack);
+
+                ref var shootFX = ref _shootFxPool.Get(entity).fx;
+                
+                shootFX.Play();
 
                 ref var attackSpeed = ref _attackSpeedPool.Get(entity).value;
                 _attackDelayTimerPool.Add(entity).Timer = attackSpeed;

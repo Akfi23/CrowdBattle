@@ -16,7 +16,7 @@ namespace _Source.Code.ECS.Systems
         private EcsFilter _playerFilter;
         private EcsFilter _enemyFilter;
         
-        private EcsPool<DestroyRequest> _destroyPool;
+        private EcsPool<DeathRequest> _dethRequestPool;
         private EcsPool<Unit> _unitPool;
         
         private BattleRoundService _battleRoundService;
@@ -26,11 +26,11 @@ namespace _Source.Code.ECS.Systems
         {
             _world = systems.GetWorld();
 
-            _destroyFilter = _world.Filter<DestroyRequest>().End();
+            _destroyFilter = _world.Filter<DeathRequest>().End();
             _playerFilter = _world.Filter<Unit>().Inc<Player>().Inc<Spawned>().Inc<Init>().Exc<Die>().End();
             _enemyFilter = _world.Filter<Unit>().Inc<Enemy>().Inc<Spawned>().Inc<Init>().Exc<Die>().End();
 
-            _destroyPool = _world.GetPool<DestroyRequest>();
+            _dethRequestPool = _world.GetPool<DeathRequest>();
             _unitPool = _world.GetPool<Unit>();
             
             _battleRoundService = container.Resolve<BattleRoundService>();
@@ -41,14 +41,12 @@ namespace _Source.Code.ECS.Systems
         {
             foreach (var entity in _destroyFilter)
             {
-                ref var destroyRequest = ref _destroyPool.Get(entity);
+                ref var destroyRequest = ref _dethRequestPool.Get(entity);
                 if(!destroyRequest.TargetPackedEntity.Unpack(_world,out var destroyedEntity)) continue;
                 if(!_unitPool.Has(destroyedEntity)) continue;
 
                 _battleRoundService.SetEnemyUnitCount(_enemyFilter.GetEntitiesCount());
                 _battleRoundService.SetPlayersUnitCount(_playerFilter.GetEntitiesCount());
-
-
                 
                 if (_enemyFilter.GetEntitiesCount() < 1)
                 {
