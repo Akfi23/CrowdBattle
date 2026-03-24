@@ -2840,6 +2840,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2279472602194390278, guid: c75ab4672b3374e3492b02f534b25ce7, type: 3}
+      propertyPath: lineThickness
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 3845895318415099345, guid: c75ab4672b3374e3492b02f534b25ce7, type: 3}
       propertyPath: m_Name
       value: p_game_spawn_area_player
@@ -2897,6 +2901,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1707950231827361527, guid: 3a911ebfcc5524363b624f304d99c980, type: 3}
+      propertyPath: lineThickness
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 3293879970951988204, guid: 3a911ebfcc5524363b624f304d99c980, type: 3}
       propertyPath: m_Name
       value: p_game_spawn_area_enemy
